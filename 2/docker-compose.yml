@@ -1,0 +1,16 @@
+# я так понял в инструкции не хватает services
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
+      
+  php:
+    image: php:8-fpm
+    volumes:
+      - ./code:/code
