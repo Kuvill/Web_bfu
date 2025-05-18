@@ -7,3 +7,5 @@ function printStringReturnNumber() {
 
 $my_num = printStringReturnNumber();
 echo $my_num . "\n";
+
+?>

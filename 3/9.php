@@ -5,7 +5,7 @@ for( $i = 0; $i < 10; ++$i ) {
 	$array[$i] = str_repeat( 'x', $i );
 }
 
-function arrayFill( $value, int $len ) {
+function arrayFill( mixed $value, int $len ) {
 	return array_fill( 0, $len, $value );
 }
 
@@ -19,6 +19,14 @@ foreach ( $vec2 as $row ) {
 		$sum += $elem;
 	}
 } echo $sum . "\n"; 
+
+// Fix: added the task
+$vec2 = [];
+for( $i = 0; $i < 3; ++$i ) {
+    for( $j = 0; $j < 3; ++$j ) {
+        $array[$i][$j] = ($i+1)*($j+1);
+    }
+}
 
 $array = [2, 5, 3, 9];
 $result = $array[0] * $array[1] + $array[2] * $array[3];

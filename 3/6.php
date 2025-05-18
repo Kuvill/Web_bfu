@@ -15,12 +15,13 @@ $sqrt = sqrt( 245 );
 
 $array = array( 4, 2, 5, 19, 13, 0, 10 );
 $sum = 0;
+// Fix: added pow
 foreach ( $array as $elem ) {
-	$sum += $elem;
+	$sum += $elem ** 2;
 }
 
 $sumSqrt = sqrt( $sum );
-echo $sumSqrt . "\n";
+echo "Корень суммы квадратов" . $sumSqrt . "\n";
 
 $sqrt = sqrt( 379 );
 $sqrt0 = round( $sqrt, 0 );
@@ -34,19 +35,24 @@ $map = ['floor' => floor($sqrt), 'ceil' => ceil($sqrt)];
 $max = max( 4, 02, 5, 19, -130, 0, 10 );
 $min = min( 4, 02, 5, 19, -130, 0, 10 );
 
-echo rand( 1, 100 )  . "\n";
+echo "Случайное число (1-100): " . rand( 1, 100 )  . "\n";
 
+// Fix: removed rand parameters
 $array = array();
 for( $i = 0; $i < 10; ++$i ) {
-	$array[$i] = rand( 1, 100 );
+	$array[$i] = rand();
 }
 
 $a = 10;
 $b = -20;
-echo abs($a) - abs($b) . "\n";
+echo "Разница модулей $a и $b: " . abs($a) - abs($b) . "\n";
+
+$a = 0;
+$b = -20;
+echo "Другой пример. $a, $b: " . abs($a) - abs($b) . "\n";
 
 $array = array( 1, 2, -1, -2, 3, -3);
-echo "new array: ";
+echo "new abs'ed massive: ";
 foreach( $array as $elem ) {
 	$elem = abs( $elem );
 	echo  $elem;
@@ -64,7 +70,7 @@ $array = array( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 );
 $sum = 0;
 for ($i = 0; $i < 10; ++$i) {
     if ($sum > 10) {
-        echo $i."\n";
+        echo "Нужно сложить $i первых чисел\n";
         break;
     }
 
