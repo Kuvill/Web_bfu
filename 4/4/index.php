@@ -1,3 +1,10 @@
+<?php
+session_start();
+$_SESSION["name"] = $_POST["email"];
+$_SESSION["email"] = $_POST["email"];
+$_SESSION["phone"] = $_POST["phone"];
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,8 +13,8 @@
     </head>
 
     <body>
-        <h2>Deanon</h2>
-        <form action="sessionSaver.php" method="POST">
+        <h2>Safe form</h2>
+        <form action="" method="POST">
             <p>Entry the name: <input type="text" name="name" /></p>
             <p>Entry the emal: <input type="text" name="email" /></p>
             <p>Entry the phone: <input type="text" name="phone" /></p>
